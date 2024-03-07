@@ -1,18 +1,8 @@
 /*---------------------------------------------
-	Program 2: Wumpus, version 2 (dynamically allocated array)
+  Wumpus
   
-  Course: CS 211, Fall 2021. Thurs 10am lab
   System: Mac using Replit
   Author: Ceasar Attar
-  UIN: 673606735
-  Fall 2022
-
-  For this program, I used a completely different approach than the one provided through the solution code. I used pointers to access the manipulate and access the memory location of my variables where as the solution code utilizes structs to access each data member. I then seeded rand at the beginning of my main function and set each variable randomly using rand() % 20 + 1;, while also implemneting a checker function that compares all the elements and reassigns them to a new random variable if a match is found. The solution code uses a seperate function to do all of this. The solution code then uses a seperate function to check the hazards with the struct where as I need to call everything through my pointers. Solution code also has a seperate function for the bat check where as mine is in my player move function. This helps with the input as I can quickly scanf the users move and then call in my move function which has the checks inside. After seeing how long some of my functions and main got, I decided to create a adjcheckdr functions which basically checks if the two rooms are adjacent to each other and returns a boolean. I also used a variable called checked which is initialized to 0 from the start and only changed to 1 if the rooms are not adjacent. In my shoot function i implemented a different approach. The adjacent checker used in the solution code also utilizes the comparison of the 3 rooms where as my function utilizes pointers and a for loop to go through the rooms and return each boolean respectively.  I also tried taking an approach where i would store each of the rooms the user wants to shoot into using different variables, but then found that dynamically allocating a second 1D array only for the arrow path would be a lot easier to use and implement in my functions. I then worked on my shoot function which starts by checking if the user has the arrow or not and displays the print statement accordingly, then I used scanf within a for loop to read in all the rooms and set the room number to 3 if the user tries inputting more than 3 numbers. I then set the arrow variable to the person to essentially move around with the person. Secondly, I started by checking if the arrow can travel through an adjacent room or not. if it can then we set the arrow to that room and if not then we set the arrow to the lowest numbered adjacent room to the arrow's current room. I then handled all the wumpus events where the arrow ricochets and hits the wumpus or ricochets into the player and kills them. Finally,  I used if statements to handle all the menu options and pushed all the parameters into my functions using pointers instead os structs. 
-
-
-
-
-
   ---------------------------------------------
 */
 #include <stdbool.h>
